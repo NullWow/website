@@ -1,0 +1,111 @@
+
+
+@font-face{
+	font-family: bootstrapFont;
+	src: url(../font/glyphicons-halflings-regular.woff);
+}
+@font-face{
+	font-family: ghost1;
+	src: url(../font/Ghost theory 1.ttf);
+}
+@font-face{
+	font-family: ghost2;
+	src: url(../font/Ghost theory 2.ttf);
+}
+@font-face{
+	font-family: arggotsc;
+	src: url(../font/Arggotsc.ttf);
+}
+
+body{
+	color: rgba(224,213,228,1);
+}
+.header{
+	width: 100%;
+	height: 30%;
+}
+.content{
+	width: 100%;
+	min-height: 60%;
+	background-color: rgba(25, 36, 37, .5)
+}
+.bottom{
+	width: 100%;
+	height: 20%;
+}
+.blog{
+	width: 60%;
+	min-height: 100%;
+	position: relative;
+	margin-left: 20%;
+	padding: 1%;
+}
+#logo{
+	width: 60%;
+	min-height: 100%;
+	position: relative;
+	margin-left: 20%;
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 65%;
+}
+.title1{
+	color: rgba(224,213,228,1);
+	font-family: bootstrapFont;
+	font-size: 16px;
+}
+.title2{
+	color: rgba(224,213,228,1);
+	font-size: 14px;
+}
+.form{
+	width: 80%;
+	margin-left: 10%;
+	padding: 2%;
+}
+.form p{
+	text-align: center;
+	font-style: italic;
+}
+.factSheet{
+	float: right;
+	position: relative;
+	height: 50%;
+	width: 18%;
+	margin-right: 2%;
+	margin-top: 3%;
+}
+.factSheet #title{
+	color: rgba(224,213,228,1);
+	text-align: center;
+	font-family: ghost2;
+	font-size: 36px;
+}
+.factSheet li{
+	color: rgba(224,213,228,1);
+}
+
+.blog .lDesc{
+	text-align: justify;
+	min-height: 30%;
+	margin-left: 10%;
+	width: 80%;
+	color: rgba(224,213,228,1);
+}
+.faceButton{
+	height: 13%;
+	color: rgba(224,213,228,1); 
+	background-color: rgba(25, 36, 37, 1);
+	width: 80%;
+	margin-left: 10%;
+}
+
+.blog .historia{
+	min-height: 50%;
+	margin-left: 10%;
+	width: 80%;
+	color: rgba(224,213,228,1);
+	margin-top: 10%;
+	text-align: justify;
+}
