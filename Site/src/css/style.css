@@ -17,6 +17,10 @@
 	src: url(../font/Arggotsc.ttf);
 }
 
+.page {
+	padding-top:50px;
+}
+
 body{
 	color: rgba(224,213,228,1);
 }
@@ -98,7 +102,7 @@ body{
 	color: rgba(224,213,228,1);
 }
 .faceButton{
-	height: 13%;
+	height: 17%;
 	color: rgba(224,213,228,1); 
 	background-color: #152c3c;
 	width: 80%;
