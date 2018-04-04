@@ -34,7 +34,7 @@ body{
 }
 .content{
 	width: 100%;
-	min-height: 60%;
+	height: 100%;
 	background-color: #213e52;
 }
 .bottom{
@@ -116,4 +116,9 @@ body{
 	color: rgba(224,213,228,1);
 	margin-top: 10%;
 	text-align: justify;
+}
+
+td img {
+	max-height: 30px;
+	max-width: 30px;
 }

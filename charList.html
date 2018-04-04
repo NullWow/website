@@ -1,0 +1,60 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/onlinePlayers.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="WOTLK BR sem donate!">
+    <meta name="keywords" content="WOTLK, Wotlk, 3.3.5, 3.3.5a, World of Warcraft, WOW, Warcraft, Litch, Litch King, King, Server, Server wow">
+    <title>NullWoW - WoW de verdade!</title>
+    <script>
+            $(document).ready(function() {
+                getListPlayersOnline();
+            });
+        </script>
+    </head>
+    
+    <body style="margin: 0; background-color: rgba(25, 36, 37, .9);" onload="">
+        <div class="page">
+            <div class="header">
+                <div id="logo"></div>
+            </div>
+            <div class="content">
+                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">						
+                        <a class="navbar-brand" href="./index.html">NullWoW</a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li><a class="nav-link" href="./index.html">Home</a></li>
+                                <li class="active"><a class="nav-link" href="./charList.html">Online List</a></li>					
+                                <li><a class="nav-link" href="register/index.php">Register</a></li>
+                                <li><a class="nav-link" href="https://trello.com/b/IX7MaqiO/nullwow" target="_blank">Trello</a></li>
+                                <li><a class="nav-link" href="magnet:?xt=urn:btih:08388f74cb683ef25d31b5d9c34a0411e4555c2c&dn=WOW+Wotlk+3.3.5a&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fzer0day.ch%3A1337&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969">Download</a></li>
+                                <li><a class="nav-link" href="https://topg.org/wow-private-servers/in-488461" target="_blank"><img src="https://topg.org/topg2.gif" width="88" height="31" border="0" alt="wow private servers"></a></li>
+                                <li><a class="nav-link" href="https://www.xtremetop100.com/in.php?site=1132365223" title="World of Warcraft Server" target="_blank"><img style="max-height: 30px;" src="https://www.xtremeTop100.com/votenew.jpg" border="0" alt="World of Warcraft Server"></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                <table class="table table-striped table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Race</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Latency</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-content">
+                         
+                        </tbody>
+                      </table>
+
+            </div>
+            <!-- <div class="bottom"></div> -->
+        </div>
+    </body>
+    </html>
+    
