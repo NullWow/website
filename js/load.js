@@ -8,5 +8,5 @@ var loadList = function(){
     $('#homeLink').removeClass('active');
     $('#onlineListLink').addClass('active');
     $('#content').load('components/content/onlineList.html');
-    // getListPlayerOnline();
+    getListPlayersOnline();
 };
