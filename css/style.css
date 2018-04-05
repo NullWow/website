@@ -17,73 +17,23 @@
 	src: url(../font/Arggotsc.ttf);
 }
 
-.page {
-	padding-top:0px;
-}
-
 body{
 	color: rgba(224,213,228,1);
 }
 .header{
 	margin-top: 50px;
-	width: 100%;
-	height: 30%;
+	height: 200px;
 	background-image: url(../img/tittle_BG.jpg);
 	background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 20%;
 }
-.content{
-	width: 100%;
-	height: 100%;
-	background-color: #213e52;
-}
-.bottom{
-	width: 100%;
-	height: 20%;
-}
-.blog{
-	width: 60%;
-	min-height: 100%;
-	position: relative;
-	margin-left: 20%;
-	padding: 1%;
-}
-#logo{
-	width: 45%;
-	min-height: 100%;
-	position: relative;
-	margin-left: 30%;
+
+.logo{
+	max-width: 200px;
 	background-image: url(../img/logo.png);
 	background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 40%;
-}
-.title1{
-	color: rgba(224,213,228,1);
-	font-family: bootstrapFont;
-	font-size: 16px;
-}
-.title2{
-	color: rgba(224,213,228,1);
-	font-size: 14px;
-}
-.form{
-	width: 80%;
-	margin-left: 10%;
-	padding: 2%;
-}
-.form p{
-	text-align: center;
-	font-style: italic;
-}
-.factSheet{
-	float: right;
-	position: relative;
-	height: 50%;
-	width: 18%;
-	margin-right: 2%;
-	margin-top: 3%;
 }
 .factSheet #title{
 	color: rgba(224,213,228,1);
@@ -95,28 +45,22 @@ body{
 	color: rgba(224,213,228,1);
 }
 
-.blog .lDesc{
-	text-align: justify;
-	min-height: 30%;
-	margin-left: 10%;
-	width: 80%;
+.blog{
+	padding-top: 10px;
 	color: rgba(224,213,228,1);
 }
 .faceButton{
-	height: 17%;
 	color: rgba(224,213,228,1); 
 	background-color: #152c3c;
-	width: 80%;
-	margin-left: 10%;
+	padding: 20px;
+}
+
+.faceButton p {
+	font-size: 16px;
 }
 
 .blog .historia{
-	min-height: 50%;
-	margin-left: 10%;
-	width: 80%;
 	color: rgba(224,213,228,1);
-	margin-top: 10%;
-	text-align: justify;
 }
 
 td img {

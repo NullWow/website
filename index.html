@@ -1,84 +1,31 @@
 <html lang="pt-br">
-<head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="WOTLK BR sem donate!">
-<meta name="keywords" content="WOTLK, Wotlk, wow, wow 3.3.5, 3.3.5, 3.3.5a, World of Warcraft, WOW, Warcraft, Litch, Litch King, King, Server, Server wow">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="js/load.js"></script>
+		<script src="js/onlinePlayers.js"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="WOTLK BR sem donate!">
+		<meta name="keywords" content="WOTLK, Wotlk, wow, wow 3.3.5, 3.3.5, 3.3.5a, World of Warcraft, WOW, Warcraft, Litch, Litch King, King, Server, Server wow">
 
-<title>NullWoW - WoW de verdade!</title>
-</head>
+		<script>
+			$(document).ready(function(){
+				$('#header').load('components/header.html');
+				$('#navbar').load('components/navbar.html');
+				$('#content').load('components/content/index.html');
+			});
+		</script>
 
-<body class="container-fluid" style="background-color: rgba(25, 36, 37, .9);">
-	<div class="header container-fluid">
-		<div id="logo"></div>
-	</div>
+		<title>NullWoW - WoW de verdade!</title>
+	</head>
 
-	<div class="page row">
-		<div class="container-fluid content">
-				<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">						
-					<a class="navbar-brand" href="./index.html">NullWoW</a>
-					<button	class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div id="navbarNavContent" class="collapse navbar-collapse">
-						<ul class="navbar-nav">
-							<li class="active"><a class="nav-link" href="./index.html">Home</a></li>
-							<li><a class="nav-link" href="./charList.html">Online List</a></li>					
-							<li><a class="nav-link" href="register/index.php">Register</a></li>
-							<li><a class="nav-link" href="https://trello.com/b/IX7MaqiO/nullwow" target="_blank">Trello</a></li>
-							<li><a class="nav-link" href="magnet:?xt=urn:btih:08388f74cb683ef25d31b5d9c34a0411e4555c2c&dn=WOW+Wotlk+3.3.5a&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fzer0day.ch%3A1337&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969">Download</a></li>
-							<li><a class="nav-link" href="https://topg.org/wow-private-servers/in-488461" target="_blank"><img src="https://topg.org/topg2.gif" width="88" height="31" border="0" alt="wow private servers"></a></li>
-							<li><a class="nav-link" href="https://www.xtremetop100.com/in.php?site=1132365223" title="World of Warcraft Server" target="_blank"><img style="max-height: 30px;" src="https://www.xtremeTop100.com/votenew.jpg" border="0" alt="World of Warcraft Server"></a></li>
-							<li><a class="nav-link" href="http://www.topservers200.com/in.php?id=19999"  target="_blank"><img style="max-height: 30px;" src="https://www.topservers200.com/button/19999.png" alt="Vote no Top 200" border="0"></a></li>
-						</ul>
-					</div>
-				</nav>
-			<div class="factSheet">
-				<p id="title">Informações</p>
-				<ul style="padding: 0;">
-					<li>realmlist: set realmlist nullwow.bovendorp.org</li>
-					<br>
-					<li>Rates: 10x </li>
-					<br>
-					<li>Developer: Dehzo</li>
-					<br>
-					<li>Release date: 04/18</li>
-					<br>
-					<li>Website: https://nullwow.bovendorp.org</li>
-					<br>
-					<li><a href="http://www.facebook.com/nullwow.org">Facebook</a></li>
-					<br>
-					<li>Free to play, no donation system!</li>
-					<br>					
-				</ul>
-			</div>
-
-			<div class="blog">
-				<div class="lDesc">
-					<p>
-						<b>Descrição</b>
-					</p>
-					<p>Um simples servidor onde o foco é na diversão.</p>
-					<p>Todo nosso servidor é free, sem donate e com taxas altas para foco em pve e pvp.</p>
-				</div>
-				<div class="faceButton">
-					<div style="margin-left: 22%; padding: 1.5%;">
-						<p style="font-size: 16px; ">
-							<b>Fique atento em nossa página no Facebook</b>
-						</p>
-						<a style="margin-left: 10%;" href="http://facebook.com/nullwow.org" target="blank"><button style="margin-left: 13%;" id="button" type="button"
-							class="btn btn-primary">Facebook</button></a>
-
-					</div>
-				</div>
-				<div class="historia">
-				</div>
-			</div>
-		</div>
-		<!-- <div class="bottom"></div> -->
-	</div>
-</body>
+	<body class="container-fluid" style="background-color: rgba(25, 36, 37, .9);">
+		<div id="header" class="container-max-width"></div>
+		<div id="navbar" class="container-max-width"></div>
+		<div id="content" class="container"></div>
+		<div id="bottom" class="container"></div>
+	</body>
 </html>

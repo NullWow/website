@@ -1,0 +1,33 @@
+<div class="container">
+    <div id="factSheet"></div>  
+    <div class="col-md-8 offset-2">
+        <div class="row blog justify-content-center">
+            <div>
+                <p><b>Descrição</b></p>
+                <p>Um simples servidor onde o foco é a diversão e a amizade.</p>
+                <p>Todo nosso servidor é free, sem venda de itens e com foco em pve e pvp.</p>
+            </div>    
+        </div>
+        <div class="col-md-8 offset-1 faceButton">
+            <div class="row justify-content-center">
+                <div>
+                    <p>
+                        <b>Fique atento em nossa página no Facebook</b>
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">    
+                <div>
+                    <a href="http://facebook.com/nullwow.org" target="blank">
+                        <button id="button" type="button" class="btn btn-primary">Facebook</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>
+<script>
+    $('document').ready(function(){
+        $('#factSheet').load('components/content/factsheet.html');
+    });
+</script>
