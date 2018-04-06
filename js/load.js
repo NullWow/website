@@ -23,3 +23,8 @@ var loadRegister = function(){
 var registerResponse = function(){
     $('content').load('components/content/registerResponse.html');
 }
+
+var doSubmit = function(response){
+    $('#gResponse').val(response);
+    $('#requestForm').submit();
+};

@@ -94,3 +94,28 @@ function getCharactersOnline(){
     $row = $online->fetch_all(MYSQLI_NUM);
     return $row;
 }
+
+
+function validateCaptcha($response, $ip){
+    $secret = '6Ld3W1EUAAAAAN5pQoR4pAn84PTjo5WKeNt1rjcJ';
+    $uri = 'https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response.'&remoteip='.$ip;
+
+    $fields = array('secret', $secret, 
+                    'response', $response,
+                    'remoteip', $ip                              
+    );
+
+    $length = strlen((string)$fields);
+
+    $curl = curl_init($uri);
+    curl_setopt($curl, CURLOPT_URL, $uri);
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, 'secret='.$secret.'&response='.$response.'&remoteip='.$ip);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/form-data', 'Content-Length: '.$length));
+
+    $ret = curl_exec($curl);
+    $json = json_decode($ret);
+    return $json->success;
+}

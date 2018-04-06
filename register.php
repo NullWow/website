@@ -4,14 +4,26 @@ foreach (glob("engine/*.php") as $filename)
     include $filename;
 }
 
-    if(isset($_POST['doRegister'])){
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
-        $pass2 = $_POST['passwordConfirm'];
-		$username = $_POST['username']; 
-		
-		$response = register_user($username, $email, $pass, $pass2);
-    }
+if(isset($_POST['gResponse'])) {
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$response = $_POST['gResponse'];
+	if(validateCaptcha($response, $ip)){
+		$response = "captcha validado com sucesso!";
+		if(isset($_POST['doRegister'])){
+			$email = $_POST['email'];
+			$pass = $_POST['password'];
+			$pass2 = $_POST['passwordConfirm'];
+			$username = $_POST['username']; 
+			
+			$response = register_user(clean($username), $email, $pass, $pass2);
+		}
+	} else {
+		$response = "Erro no captcha! clique <a href=\"./index.html\">aqui</a> e tente novamente!";
+	}
+} else {
+	$response = "Erro no captcha! clique <a href=\"./index.html\">aqui</a> e tente novamente!";
+}
+
 ?>
 <script>
     var responseText = "<?php echo $response;?>"
