@@ -47,7 +47,7 @@ var populateTable = function(elements){
 var getListPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
-        url: 'register/usersOnline.php',
+        url: 'usersOnline.php',
         // url: 'https://nullwow.bovendorp.org/register/usersOnline.php', // TEst url
 		success: function (msg) {
             populateTable(msg.Characters);

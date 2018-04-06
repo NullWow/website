@@ -67,3 +67,16 @@ td img {
 	max-height: 30px;
 	max-width: 30px;
 }
+
+.register {
+	margin-top: 30px;
+	color: white;
+}
+
+.registerResponse {
+	padding: 10px;
+}
+
+.with-errors {
+	color: #FF4F4F !important;
+}

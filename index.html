@@ -5,6 +5,7 @@
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>		
 		<script src="js/load.js"></script>
 		<script src="js/onlinePlayers.js"></script>
 		<meta charset="UTF-8">
@@ -14,6 +15,8 @@
 
 		<script>
 			$(document).ready(function(){
+
+				var responseText = ""; // precisa para o registro inicial nao dar pau;
 				$('#header').load('components/header.html');
 				$('#navbar').load('components/navbar.html');
 				$('#content').load('components/content/index.html');
