@@ -53,4 +53,18 @@ var getListPlayersOnline = function(cb){
             populateTable(msg.Characters);
 		}
 	});
-}
+};
+
+var getNumPlayersOnline = function(cb){
+    $.ajax({
+		type: "get",
+        url: 'usersOnline.php',
+        // url: 'https://nullwow.bovendorp.org/usersOnline.php', // TEst url
+		success: function (msg) {
+            cb(msg.Online);
+        },
+        error: function(err){
+            console.log(err);
+        }
+	});
+};

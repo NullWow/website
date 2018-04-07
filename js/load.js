@@ -3,6 +3,8 @@ var loadIndex = function(){
     $('#onlineListLink').removeClass('active');
     $('#registerLink').removeClass('active');
     $('#homeLink').addClass('active');
+    window.history.pushState("", "", '/');
+    
 };
 
 var loadList = function(){
@@ -11,6 +13,7 @@ var loadList = function(){
     $('#onlineListLink').addClass('active');
     $('#content').load('components/content/onlineList.html');
     getListPlayersOnline();
+    window.history.pushState("", "", '/online');    
 };
 
 var loadRegister = function(){
@@ -18,6 +21,7 @@ var loadRegister = function(){
     $('#onlineListLink').removeClass('active');
     $('#registerLink').addClass('active');
     $('#content').load('components/content/register.html');
+    window.history.pushState("", "", '/register');    
 }
 
 var registerResponse = function(){

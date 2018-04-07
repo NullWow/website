@@ -35,13 +35,13 @@ body{
 	background-repeat: no-repeat;
     background-size: cover;
 }
-.factSheet #title{
+.factsheet #title{
 	color: rgba(224,213,228,1);
 	text-align: center;
 	font-family: ghost2;
 	font-size: 36px;
 }
-.factSheet li{
+.factsheet li{
 	color: rgba(224,213,228,1);
 }
 
