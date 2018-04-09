@@ -7,7 +7,8 @@
         <li>Desenvolvedor: <a href="https://github.com/boveloco">Dehzo</a></li>
         <li>Lançamento: Abril/18</li>
         <li><a href="http://www.facebook.com/nullwow.org">Facebook</a></li>
-        <li>Free to Play! Sem vendas de itens!</li>					
+        <li>Free to Play! Sem vendas de itens!</li>
+        <li><div class="fb-like" data-href="https://facebook.com/nullwow.org" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></li>
     </ul>
 </div>
 
@@ -16,3 +17,12 @@
         $('#uOnline').text(players);
     }));
 </script>
+<!-- Facebook sdk -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
