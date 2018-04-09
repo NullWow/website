@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /index.html
+Allow: /register.html
+Allow: /online.html
