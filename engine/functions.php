@@ -90,7 +90,7 @@ function getNumUsersOnline(){
 function getCharactersOnline(){
     global $db_ip, $db_user, $db_password, $db_auth;
     $con  = connect($db_ip, $db_user, $db_password, "characters");
-    $online = $con->query("SELECT name, race, level, class, gender, latency  FROM characters WHERE online > 0 order by name;");
+    $online = $con->query("SELECT name, race, level, class, gender, latency  FROM characters WHERE online > 0 order by level, name;");
     $row = $online->fetch_all(MYSQLI_NUM);
     return $row;
 }
