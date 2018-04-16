@@ -1,0 +1,24 @@
+<!-- IF -->        
+<!-- Aqui, Esse dropdown só deve aparecer caso não esteja logado -->
+<div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Account
+    </button>
+    <div class="dropdown-menu bg-dark" style="right: 0; left: unset; color: white;">
+        <form class="px-4 py-3">
+            <div class="form-group">
+            <label for="loginEmail">Username/Email</label>
+            <input type="text" class="form-control" id="loginEmail" placeholder="Username" name="email">
+            </div>
+            <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="password">
+            </div>
+            <button id="btnLogin" class="btn btn-primary">Login</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/register">Não possui cadastro? Registre</a>
+        <a class="dropdown-item" href="/recoverPassword">Esqueceu a Senha?</a>
+        </div>
+</div>
+<!-- ENDIF -->
