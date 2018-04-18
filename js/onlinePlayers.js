@@ -47,10 +47,9 @@ var populateTable = function(elements){
 var getListPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
-        url: 'usersOnline.php',
-        // url: 'https://nullwow.bovendorp.org/register/usersOnline.php', // TEst url
+        url: API_URI + 'listas/who',
 		success: function (msg) {
-            populateTable(msg.Characters);
+            populateTable(msg.players);
 		}
 	});
 };
@@ -58,10 +57,9 @@ var getListPlayersOnline = function(cb){
 var getNumPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
-        url: 'usersOnline.php',
-        // url: 'https://nullwow.bovendorp.org/usersOnline.php', // TEst url
+        url: API_URI + 'listas/who/number',
 		success: function (msg) {
-            cb(msg.Online);
+            cb(msg.number);
         },
         error: function(err){
             console.log(err);
