@@ -1,0 +1,27 @@
+<script>
+    $(document).ready(function(){
+        createVoteLinks(USER_LOGGED.id);        
+        $('#logout').click(function(){ return doLogout(); });
+    });
+</script>
+<!-- IF -->        
+<!-- Aqui, Esse dropdown só deve aparecer caso não esteja logado -->
+<div class="dropdown">
+    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Account
+    </button>
+    <div class="dropdown-menu bg-dark" style="right: 0; left: unset; color: white; min-width: 250px;">
+
+        <h4 id="loginMessage"></h4>
+        <a class="dropdown-item white" href="#">Change E-mail</a>
+        <a class="dropdown-item white" href="#">Change Password</a> 
+        
+        <div class="dropdown-divider"></div>
+        <a id="voteStore" class="dropdown-item white" href="#">Vote Store</a>        
+    
+        <div class="dropdown-divider"></div>
+        <a id="logout" class="dropdown-item white" href="/index.html"> LogOut</a>
+        <div class="dropdown-divider"></div>
+        </div>
+</div>
+<!-- ENDIF -->
