@@ -39,7 +39,6 @@ var populateTable = function(elements){
             .append($('<td>').text(elements[i][2]))
             .append($('<td>').text(Class[elements[i][3]]))
             .append($('<td>').append($('<img>').attr('src', Gender[elements[i][4]])))
-            .append($('<td>').text(elements[i][5]))
         )
     }
 }
