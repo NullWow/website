@@ -100,3 +100,7 @@ td img {
 .white {
 	color: rgba(255, 255, 255, 0.5) !important;
 }
+
+.disabled {
+	background-color: rgba(25, 36, 37, .9) !important;
+}
