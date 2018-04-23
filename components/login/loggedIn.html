@@ -1,7 +1,11 @@
 <script>
     $(document).ready(function(){
-        createVoteLinks(USER_LOGGED.id);        
-        $('#logout').click(function(){ return doLogout(); });
+        createVoteLinks(USER_LOGGED.id);  
+        $('#changePasswordLink').click(function(){
+            $('#content').load('components/content/recoverPassword.html');
+        });
+        $('#vp_counter').text(USER_LOGGED.votes + ' pts.');     
+        // $('#logout').click(function(){ return doLogout(); });
     });
 </script>
 <!-- IF -->        
@@ -13,11 +17,11 @@
     <div class="dropdown-menu bg-dark" style="right: 0; left: unset; color: white; min-width: 250px;">
 
         <h4 id="loginMessage"></h4>
-        <a class="dropdown-item white" href="#">Change E-mail</a>
-        <a class="dropdown-item white" href="#">Change Password</a> 
+        <a class="dropdown-item white disabled">Change E-mail</a>
+        <a id="changePasswordLink" class="dropdown-item white" href="#">Change Password</a> 
         
         <div class="dropdown-divider"></div>
-        <a id="voteStore" class="dropdown-item white" href="#">Vote Store</a>        
+        <a id="voteStore" class="dropdown-item white disabled" >Vote Store<span class="float-right" id="vp_counter">0 pts</span></a>        
     
         <div class="dropdown-divider"></div>
         <a id="logout" class="dropdown-item white" href="/index.html"> LogOut</a>
