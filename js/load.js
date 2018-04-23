@@ -30,14 +30,18 @@ var login = function() {
         data: $('#loginForm').serialize(),
         url: API_URI + 'session/',
         error: function(ret){
-           $('#loginMessage').text('Usuario ou senha inválidos!');
+                return doToastr('warning', 'Login Failed' , 'Usuário ou senha inválidos');
+
         },
         success: function(resp){
             if(resp.login == false || resp.error == true){
-                return $('#loginMessage').text('Usuario ou senha inválidos!');   
+                return doToastr('warning', 'Login Failed' , 'Usuário ou senha inválidos');
+
+                // return $('#loginMessage').text('Usuario ou senha inválidos!');
             }
             USER_LOGGED = resp.session;
             $('#loginButton').load('components/login/loggedIn.html');
+            return doToastr('success', 'Login Success' , 'Seja bem vindo: ' + USER_LOGGED.username + '!');
         }
     });
 };
@@ -58,8 +62,16 @@ var verifyLoggedIn = function(cb){
     })
 };
 
-var swapLogin = function(){
-    
+var doToastr = function(type, head, text, hide = 2000){
+    $.toast({
+        heading: head,
+        text: text,
+        showHideTransition: 'slide',
+        icon: type.toLowerCase(),
+        position: 'bottom-right',
+        stack: false,
+        hideAfter: hide
+    });
 }
 
 var doLogout = function() {
@@ -80,8 +92,9 @@ var createVoteLinks = function(id){
         .after($('<a>')
             .addClass('dropdown-item')
             .addClass('white')
-            .prop('href','https://www.xtremetop100.com/in.php?site=1132365223&postback=' + id)
-            .prop('target', '_blank')
+            .addClass('disabled')            
+            // .prop('href','https://www.xtremetop100.com/in.php?site=1132365223&postback=' + id)
+            // .prop('target', '_blank')
             .text('XtremeTop100')
             .append($('<img>')
                 .addClass('float-right')
@@ -108,8 +121,9 @@ var createVoteLinks = function(id){
         .after($('<a>')
             .addClass('dropdown-item')
             .addClass('white')
-            .prop('href','http://www.top100arena.com/in.asp?id=93676?incentive=' + id)
-            .prop('target', '_blank')
+            .addClass('disabled')
+            // .prop('href','http://www.top100arena.com/in.asp?id=93676?incentive=' + id)
+            // .prop('target', '_blank')
             .text('Top100Arena')
             .append($('<img>')
                 .addClass('float-right')
