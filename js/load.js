@@ -21,14 +21,17 @@ var loadRegister = function(){
     $('#onlineListLink').removeClass('active');
     $('#registerLink').addClass('active');
     $('#content').load('components/content/register.html');
-    window.history.pushState("", "", '/register');    
+    window.history.pushState("", "", '/register');      
 }
 
-var registerResponse = function(){
-    $('content').load('components/content/registerResponse.html');
+var doToastr = function(type, head, text, hide = 2000){
+    $.toast({
+        heading: head,
+        text: text,
+        showHideTransition: 'slide',
+        icon: type.toLowerCase(),
+        position: 'bottom-right',
+        stack: false,
+        hideAfter: hide
+    });
 }
-
-var doSubmit = function(response){
-    $('#gResponse').val(response);
-    $('#requestForm').submit();
-};

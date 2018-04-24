@@ -29,9 +29,9 @@ var Gender = {
     1: 'img/si-glyph-female.svg'
 };
 
-var populateTable = function(elements){
+var populateOnline = function(elements){
     for(var i = 0; i < elements.length; i++){
-        $('#table-content')
+        $('#tableUsers-content')
         .append($('<tr>')
             .append($('<th>').attr('scope', "row").append($('<p>').text(i)))
             .append($('<td>').text(elements[i][0]))
@@ -39,7 +39,6 @@ var populateTable = function(elements){
             .append($('<td>').text(elements[i][2]))
             .append($('<td>').text(Class[elements[i][3]]))
             .append($('<td>').append($('<img>').attr('src', Gender[elements[i][4]])))
-            .append($('<td>').text(elements[i][5]))
         )
     }
 }
@@ -47,10 +46,9 @@ var populateTable = function(elements){
 var getListPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
-        url: 'usersOnline.php',
-        // url: 'https://nullwow.bovendorp.org/register/usersOnline.php', // TEst url
+        url: API_URI + 'listas/who',
 		success: function (msg) {
-            populateTable(msg.Characters);
+            populateOnline(msg.players);
 		}
 	});
 };
@@ -58,10 +56,9 @@ var getListPlayersOnline = function(cb){
 var getNumPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
-        url: 'usersOnline.php',
-        // url: 'https://nullwow.bovendorp.org/usersOnline.php', // TEst url
+        url: API_URI + 'listas/who/number',
 		success: function (msg) {
-            cb(msg.Online);
+            cb(msg.number);
         },
         error: function(err){
             console.log(err);
