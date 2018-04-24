@@ -14,15 +14,16 @@ var doRegister = function(response){
         url: API_URI + 'user/register',
         error: function(ret){
             $('#content').load('components/content/register.html', function(){
-                //$('#registerResponse').text(ret.responseJSON.response);
-                doToastr('error', 'Registro', 'Erro no cadastro, entre em contato com o administrador pelo facebook ou discord!')
+                if(ret.status == 400){
+                    return doToastr('error', 'Registro', 'Erro no cadastro, ' + ret.responseJSON.response);                
+                }
+                doToastr('error', 'Registro', 'Erro no cadastro!, entre em contato com o administrador pelo facebook ou discord!')
                 console.error('Erro cadastro', ret);
             });            
         },
         success: function(err, resp){
             $('#content').load('components/content/register.html', function(){
                 doToastr('success', 'Registro', 'Registro efetuado com sucesso! Enviamos um e-mail de boas vindas!');
-                //$('#registerResponse').text(ret.responseJSON.response);
             });   
         }
     });
