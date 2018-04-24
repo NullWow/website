@@ -1,6 +1,8 @@
 <script>
     $(document).ready(function(){
-       
+       $('#registerMenu').click(function(){
+           $('#content').load('components/content/register.html');
+       })
     });
 </script>
 <!-- IF -->        
@@ -23,8 +25,8 @@
             <button id="btnLogin" class="btn btn-primary">Login</button>
         </form>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" style="color: white;" href="/register">Não possui cadastro? Registre</a>
-        <a class="dropdown-item" style="color: white;" href="/recoverPassword">Esqueceu a Senha?</a>
+        <a id="registerMenu" class="dropdown-item" style="color: white;" href="#">Não possui cadastro? Registre</a>
+        <a class="dropdown-item disabled" style="color: white;">Esqueceu a Senha?</a>
         </div>
 </div>
 <!-- ENDIF -->
