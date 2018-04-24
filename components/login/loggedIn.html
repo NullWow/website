@@ -5,7 +5,10 @@
             $('#content').load('components/content/recoverPassword.html');
         });
         $('#vp_counter').text(USER_LOGGED.votes + ' pts.');     
-        // $('#logout').click(function(){ return doLogout(); });
+        $('#voteList').click(function(){
+            $('#content').load('components/content/voteHistory.html');
+            loadVotes(USER_LOGGED.id);
+         });
     });
 </script>
 <!-- IF -->        
@@ -21,6 +24,7 @@
         <a id="changePasswordLink" class="dropdown-item white" href="#">Change Password</a> 
         
         <div class="dropdown-divider"></div>
+        <a id="voteList" class="dropdown-item white" >Histórico de Votos</a>        
         <a id="voteStore" class="dropdown-item white disabled" >Vote Store<span class="float-right" id="vp_counter">0 pts</span></a>        
     
         <div class="dropdown-divider"></div>
