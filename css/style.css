@@ -104,3 +104,10 @@ td img {
 .disabled {
 	background-color: rgba(25, 36, 37, .9) !important;
 }
+
+@-moz-document url-prefix() {
+	.dropdown-item {
+		white-space: unset !important;
+	}
+
+}
