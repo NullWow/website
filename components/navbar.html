@@ -1,9 +1,6 @@
 <script>
     $(document).ready(function(){
-        verifyLoggedIn(function(user){
-            console.log(user);
-            $('#loginButton').load(user ? 'components/login/loggedIn.html' : 'components/login/loggedOut.html');
-        });
+        $('#loginButton').load('components/login/loggedOut.html');
         $('#homeLink').click(function(){ return loadIndex(); });
         $('#onlineListLink').click(function(){ return loadList(); });
         $('#registerLink').click(function(){ return loadRegister(); });
