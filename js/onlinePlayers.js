@@ -29,9 +29,9 @@ var Gender = {
     1: 'img/si-glyph-female.svg'
 };
 
-var populateTable = function(elements){
+var populateOnline = function(elements){
     for(var i = 0; i < elements.length; i++){
-        $('#table-content')
+        $('#tableUsers-content')
         .append($('<tr>')
             .append($('<th>').attr('scope', "row").append($('<p>').text(i)))
             .append($('<td>').text(elements[i][0]))
@@ -48,7 +48,7 @@ var getListPlayersOnline = function(cb){
 		type: "get",
         url: API_URI + 'listas/who',
 		success: function (msg) {
-            populateTable(msg.players);
+            populateOnline(msg.players);
 		}
 	});
 };
