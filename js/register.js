@@ -38,7 +38,7 @@ var doChangePassword = function(){
         data: $('#updatePasswordForm').serialize(),
         url: API_URI + 'user/updatePassword',
         error: function(ret){
-            doToastr('warning', 'Error', 'Credenciais Inválidas! Tente novamente ou entre em contato com o administrador pelo <b>Discord</b> ou Facebook!', 5000);    
+            doToastr('warning', 'Error', 'Credenciais Inválidas! Tente novamente ou entre em contato com o administrador pelo <b>Discord</b> ou Facebook!', 5000);
             $('#updatePasswordForm').trigger('reset');
         },
         success: function(err, resp){

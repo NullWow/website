@@ -51,3 +51,24 @@ var doLogout = function() {
         }
     })
 };
+
+var doRecoverPassword = function() {
+    var email = $('#emailRecoverPassword').val();
+    $('#recoverPasswordButton').prop('disabled', true);
+    $.ajax({
+        type: 'get',
+        url: API_URI + 'recover/password/' + email,
+        error: function(){
+            $('#recoverPasswordForm').trigger('reset');
+            $('#recoverPasswordButton').prop('disabled', false);
+    
+            
+            return doToastr('warning', 'Erro Recuperar Senha' , 'Email não existe!');            
+        },
+        success: function(){
+            $('#recoverPasswordForm').trigger('reset');
+            $('#recoverPasswordButton').prop('disabled', false);
+            return doToastr('success', 'Recuperar Senha' , 'Foi enviado um e-mail de recuperação, por favor, siga os passos nele descrito!');                        
+        }
+    })
+}
