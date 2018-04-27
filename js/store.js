@@ -54,5 +54,8 @@ var ITEM_TYPES = {
         8: 'Idol',
         9: 'Totem',
         10: 'Sigil'
-        }
+        },
+    15: {
+        5: 'Mounts'
+    }
 }
