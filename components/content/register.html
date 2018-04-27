@@ -2,7 +2,7 @@
     <div class="registerResponse col-auto">
         <h3 id="registerResponse"></h3>
     </div>
-    <form id="registerForm" data-toggle="validator" role="form" method="post" action="http://localhost:81/user/register">
+    <form id="registerForm" data-toggle="validator" onsubmit="return false;">
         <input id="gResponse" type="hidden" name="gResponse" value="">
         <div class="form-group">
             <label for="email" class="control-label">Email address</label>
@@ -23,6 +23,11 @@
             <label for="inputPasswordConfirm" class="control-label">Confirm Password</label>
             <input type="password" class="form-control" id="inputPasswordConfirm" name="passwordConfirm" data-minlength="6" placeholder="Confirm Password" data-match="#inputPassword" data-match-error="Password don't match!" required>
             <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputRecruitAFriend" class="control-label">Recruit a Friend</label>
+            <input type="text" name="recruiter" id="recruiterInput" class="form-control", data-minlength="2" placeholder="Quem te Indicou?">
+            <small id="helpRecruiter" class="form-text text-muted">Nome do char de quem te indicou!</small>
         </div>
     <button
         id="buttonRegister"
