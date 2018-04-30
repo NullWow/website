@@ -65,3 +65,13 @@ var getNumPlayersOnline = function(cb){
         }
 	});
 };
+
+var getRankList = function(){
+    $.ajax({
+		type: "get",
+        url: API_URI + 'listas/rank',
+		success: function (msg) {
+            populateOnline(msg.players);
+		}
+	});
+};
