@@ -1,17 +1,17 @@
 var populateItemsStore = function(elements){
-    for(var i = 0; i < elements.length; i++){
+    elements.forEach(element => {
         $('#storeContent')
         .append($('<div>')
             .addClass('col-md-3')
             .addClass('outerBox')
             .append($('<a>')
-                .attr('data-wowhead', 'item=' + elements[i][0])
+                .attr('data-wowhead', 'item=' + element[0])
                 .append($('<div>')
                     .addClass('col-md-12')
                     .addClass('storeItemName')
                     .append($('<span>')
                         .addClass('text-center')
-                        .text(elements[i][3])
+                        .text(element[3])
                     )
                 )
                 .append($('<div>')
@@ -22,6 +22,7 @@ var populateItemsStore = function(elements){
                         .addClass('btn-secondary')
                         .addClass('btn-block')
                         .text('Adicionar a Conta')
+                        .click(function() {storeBuyItem(element)})
                     )
                 )
                 .append($('<div>')
@@ -29,16 +30,17 @@ var populateItemsStore = function(elements){
                     .addClass('storeContentBottom')
                     .append($('<div>')
                         .addClass('col-md-8')
-                        .text(ITEM_TYPES[elements[i][1]][elements[i][2]])
+                        .text(ITEM_TYPES[element[1]][element[2]])
                     )
                     .append($('<div>')
                         .addClass('col-md-4')
-                        .text(elements[i][4] + ' VPs')
+                        .text(element[4] + ' VPs')
                     )
                 )
             )
         )
-    }
+
+    });
 };
 
 var doLoadStore = function(){
@@ -50,6 +52,57 @@ var doLoadStore = function(){
         },
         success: function(resp){
             populateItemsStore(resp.items);
+        }
+    });
+}
+
+var storeBuyItem = function(item){
+    if(!USER_LOGGED){
+        return doToast('warning', 'Error', 'Você precisa estar logado para fazer qualquer compra na store!');
+    }
+    if(USER_LOGGED.votes < item[4]){
+        return doToast('warning', 'VP Insuficiente', 'Você não possúi VP suficiente para comprar esse item!');        
+    }
+    var selectedChar = $('select[name=storeCharacterSelect]').val();
+    // if($('select[name=storeCharacterSelect]').val()){
+    //     return doToast('warning', 'Online', 'Você não pode estar online no jogo para comprar itens na loja!')
+    // }
+
+    doBuyItem(item[0], selectedChar);
+    
+}
+
+var doBuyItem = function(itemId, charName){
+    $.ajax({
+        type: 'POST',
+        url: API_URI + 'store/buy',
+        data: { item: itemId, name: charName },
+        error: function(ret){
+            doToastr('warning', 'Error', ret.message, 5000);
+        },
+        success: function(resp){
+            doToastr('success', 'sucesso', 'Logo o ' + charName + ' receberá o item comprado!')
+        }
+    });
+}
+
+
+var populateCharactersStore = function(chars){
+    CHARACTERS = chars;
+    chars.forEach(element => {
+        if(element[1] == 1){
+            $('#storeCharacterSelect')
+            .append($('<option>')
+                .attr('value', element[0])
+                .attr('disabled', true)
+                .text(element[0])
+            )
+        } else {
+            $('#storeCharacterSelect')
+            .append($('<option>')
+                .attr('value', element[0])
+                .text(element[0])
+            )
         }
     });
 }

@@ -20,6 +20,23 @@ var login = function() {
     });
 };
 
+var doGetChar = function(){
+    if(!USER_LOGGED){
+        return doToastr('warning', 'Error', 'Você precisa estar logado para fazer qualquer compra na store!');
+    }
+    $.ajax({
+        type: 'GET',
+        url: API_URI + 'user/char/' + USER_LOGGED.id,
+        error: function(ret){
+            doToastr('warning', 'Error', 'Você não está logado!', 5000);
+        },
+        success: function(resp){
+            doToastr('success', 'deu certo', 'deu certo');
+            populateCharactersStore(resp.characters);
+        }
+    });
+}
+
 var verifyLoggedIn = function(cb){
     $.ajax({
         type: 'GET',

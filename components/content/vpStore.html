@@ -2,30 +2,23 @@
 <script>
     var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
     $(document).ready(function(){
-        doLoadStore();
+		doLoadStore();
+		doGetChar();
     });
 </script>
 <link rel="stylesheet" type="text/css" href="css/store.css">
 
+<div class="row">
+	<div class="offset-md-2 col-md-3">
+		<span class="float-right" style="color: white;">Selecione o Personagem</span>
+	</div>
+	<div class="col-md-5">
+		<select class="form-control" name="storeCharacterSelect" id="storeCharacterSelect"></select>
+
+	</div>
+
+</div>
+
 <div id="storeContent" class="offset-md-1">
-	<!-- <div class="col-md-3 outerBox">
-		<a data-wowhead="item=2828">
-			<div class="row storeContentCenter text-center">
-				<div class="col-md-12">
-					<span class="text-center">NOME DO ITEM DO CHESSUS</span>
-				</div>
-			</div>
-			<div class="row storeButton">
-				<button class="btn-primary"> Adicionar a Conta </button>
-			</div>
-			<div class="row storeContentBottom" >
-				<div class="col-md-6">
-					TIPO DO ITEM
-				</div>
-				<div class="col-md-6">
-					VALOR DO ITEm
-				</div>
-			</div>
-		</a>
-	</div> -->
+
 </div>
