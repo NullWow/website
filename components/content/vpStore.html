@@ -2,23 +2,46 @@
 <script>
     var whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};
     $(document).ready(function(){
-		doLoadStore();
 		doGetChar();
+		doLoadStore(2);
+		$('#storeTypeWeapons').click(function(){
+			$('#storeTypeWeapons').addClass('active');
+			$('#storeTypeArmors').removeClass('active');
+			$('#storeTypeMounts').removeClass('active');
+			// $('#storeTypeServices').removeClass('active');
+			doLoadStore(2);
+		});
+		$('#storeTypeArmors').click(function(){
+			$('#storeTypeWeapons').removeClass('active');
+			$('#storeTypeArmors').addClass('active');
+			$('#storeTypeMounts').removeClass('active');
+			// $('#storeTypeServices').removeClass('active');
+			doLoadStore(4);
+		});
+		$('#storeTypeMounts').click(function(){
+			$('#storeTypeWeapons').removeClass('active');
+			$('#storeTypeArmors').removeClass('active');
+			$('#storeTypeMounts').addClass('active');
+			// $('#storeTypeServices').removeClass('active');
+			doLoadStore(15);
+		});
     });
 </script>
 <link rel="stylesheet" type="text/css" href="css/store.css">
 
-<div class="row">
+<div class="row" style="margin-top: 20px;">
 	<div class="offset-md-2 col-md-3">
-		<span class="float-right" style="color: white;">Selecione o Personagem</span>
+		<span class="float-right text-light">Selecione o Personagem</span>
 	</div>
 	<div class="col-md-5">
 		<select class="form-control" name="storeCharacterSelect" id="storeCharacterSelect"></select>
-
 	</div>
-
 </div>
+<nav class="nav nav-pills flex-column flex-sm-row navbar-dark" role="tablist">
+	<a id="storeTypeWeapons" href="#" class="nav-link active text-light">Armas</a>
+	<a id="storeTypeArmors" href="#" class="nav-link text-light">Armaduras</a>
+	<a id="storeTypeMounts" href="#" class="nav-link text-light">Montarias</a>
+	<a id="storeTypeServices" href="#" class="nav-link text-light disabled">Serviços</a>
 
-<div id="storeContent" class="offset-md-1">
-
-</div>
+</nav>
+<div id="storeContent" class="offset-md-1"></div>

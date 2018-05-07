@@ -1,4 +1,6 @@
+var ITEMS_STORE = null;
 var populateItemsStore = function(elements){
+    $('#storeContent').empty();
     elements.forEach(element => {
         $('#storeContent')
         .append($('<div>')
@@ -43,7 +45,10 @@ var populateItemsStore = function(elements){
     });
 };
 
-var doLoadStore = function(){
+var doLoadStore = function(type){
+    if(ITEMS_STORE != null){
+        return filterPopulate(ITEMS_STORE, type);
+    }
     $.ajax({
         type: 'GET',
         url: API_URI + 'store/items',
@@ -51,21 +56,34 @@ var doLoadStore = function(){
             doToastr('warning', 'Error', 'Erro ao dar load na store, tente novamente mais tarde!', 5000);
         },
         success: function(resp){
-            populateItemsStore(resp.items);
+            ITEMS_STORE = resp.items;
+            filterPopulate(resp.items, type);
         }
     });
 }
 
+var filterPopulate = function(items, type){
+    if(type){
+        var filtered = items.filter(function(element){
+            if(element[1] == type){
+                return element;
+            }
+        });
+        return populateItemsStore(filtered);
+    }
+    populateItemsStore(items);
+}
+
 var storeBuyItem = function(item){
     if(!USER_LOGGED){
-        return doToast('warning', 'Error', 'Você precisa estar logado para fazer qualquer compra na store!');
+        return doToastr('warning', 'Error', 'Você precisa estar logado para fazer qualquer compra na store!');
     }
     if(USER_LOGGED.votes < item[4]){
-        return doToast('warning', 'VP Insuficiente', 'Você não possúi VP suficiente para comprar esse item!');        
+        return doToastr('warning', 'VP Insuficiente', 'Você não possúi VP suficiente para comprar esse item!');        
     }
     var selectedChar = $('select[name=storeCharacterSelect]').val();
     // if($('select[name=storeCharacterSelect]').val()){
-    //     return doToast('warning', 'Online', 'Você não pode estar online no jogo para comprar itens na loja!')
+    //     return doToastr('warning', 'Online', 'Você não pode estar online no jogo para comprar itens na loja!')
     // }
 
     doBuyItem(item[0], selectedChar);
@@ -75,8 +93,9 @@ var storeBuyItem = function(item){
 var doBuyItem = function(itemId, charName){
     $.ajax({
         type: 'POST',
+        dataType: "json", // expected format for response
         url: API_URI + 'store/buy',
-        data: { item: itemId, name: charName },
+        data: { itemId: itemId, charName: charName },
         error: function(ret){
             doToastr('warning', 'Error', ret.message, 5000);
         },
