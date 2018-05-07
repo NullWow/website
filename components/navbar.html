@@ -3,6 +3,7 @@
         $('#loginButton').load('components/login/loggedOut.html');
         $('#homeLink').click(function(){ return loadIndex(); });
         $('#onlineListLink').click(function(){ return loadList(); });
+        $('#infoLink').click(function(){ return lodInfo(); });
         $('#rankList').click(function(){ return loadRankList(); });
         $('#registerLink').click(function(){ return loadRegister(); });
     });
@@ -16,6 +17,8 @@
     <div id="navbarNavContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li id="homeLink"class="active"><a class="nav-link" href="#" >Home</a></li>
+            <li id="infoLink"><a class="nav-link" href="#" >Informações</a></li>
+            <li><a href="https://legacy-wow.com/wotlk-addons/" class="nav-link" target="_blank">Addons</a></li>
             <li id="onlineListLink"><a class="nav-link" href="#" >Lista Online</a></li>
             <li id="rankList"><a class="nav-link" href="#" >Ranking</a></li>
             <li id="registerLink"><a class="nav-link" href="#">Registrar</a></li>
