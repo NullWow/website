@@ -29,7 +29,7 @@ var doGetSession = function(){
             request.setRequestHeader("NULLWOW-SESSION", Cookies.get('NULLWOW-SESSION'));
         },
         error: function(ret){
-            $('#loginButton').load('components/login/loggedOut.html');
+    //        $('#loginButton').load('components/login/loggedOut.html');
             USER_LOGGED = resp.user;                    
             return doToastr('warning', 'Login!' , 'Sessão expirou, faça login novamente!');
         },
