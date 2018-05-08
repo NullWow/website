@@ -12,6 +12,9 @@
         $('#voteStore').click(function(){
             $('#content').load('components/content/vpStore.html');
         });
+        $('#logout').click(function(){
+            doLogout();
+        })
         $('#voteStore').tooltip()
     });
 </script>
@@ -32,7 +35,7 @@
         <a id="voteStore" class="dropdown-item white" tabindex="0" data-toggle="tooltip" data-placement="left" title="Apenas votos com intervalos de 12h serão contabilizados!" >Vote Store<span class="float-right" id="vp_counter">0 pts</span></a>        
     
         <div class="dropdown-divider"></div>
-        <a id="logout" class="dropdown-item white" href="/index.html"> LogOut</a>
+        <a id="logout" class="dropdown-item white" href="#"> LogOut</a>
         <div class="dropdown-divider"></div>
         </div>
 </div>
