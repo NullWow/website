@@ -63,6 +63,7 @@ var doLogout = function(){
             Cookies.remove('NULLWOW-SESSION');
             USER_LOGGED = null;
             $('#loginButton').load('components/login/loggedOut.html');
+            $('#content').load('components/content/index.html')
             return doToastr('success', 'Logout' , 'Você saiu com Sucesso!');
         }
     });
