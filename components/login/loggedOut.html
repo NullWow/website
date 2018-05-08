@@ -1,10 +1,11 @@
 <script>
     $(document).ready(function(){
-       $('#registerMenu').click(function(){
-           $('#content').load('components/content/register.html');
-       })
+        doGetSession();
+        $('#registerMenu').click(function(){
+            $('#content').load('components/content/register.html');
+        })
     });
-
+    
     $('#modalRecoverPassword').on('shown.bs.modal', function () {
         $('#emailRecoverPassword').trigger('focus')
     });

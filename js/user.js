@@ -13,12 +13,60 @@ var login = function() {
 
                 // return $('#loginMessage').text('Usuario ou senha inválidos!');
             }
-            USER_LOGGED = resp.session;
+            Cookies.set('NULLWOW-SESSION', resp.session, { expires: 1/24 });
+            USER_LOGGED = resp.user;
             $('#loginButton').load('components/login/loggedIn.html');
             return doToastr('success', 'Login Success' , 'Seja bem vindo: ' + USER_LOGGED.username + '!');
         }
     });
 };
+
+var doGetSession = function(){
+    $.ajax({
+        type: 'GET',
+        url: API_URI + 'session/',
+        beforeSend: function(request) {
+            request.setRequestHeader("NULLWOW-SESSION", Cookies.get('NULLWOW-SESSION'));
+        },
+        error: function(ret){
+            $('#loginButton').load('components/login/loggedOut.html');
+            USER_LOGGED = resp.user;                    
+            return doToastr('warning', 'Login!' , 'Sessão expirou, faça login novamente!');
+        },
+        success: function(resp){
+            if(resp.error == true){
+                return;
+            }
+            if(resp.session != null) {
+                USER_LOGGED = resp.user;
+                $('#loginButton').load('components/login/loggedIn.html');
+                return doToastr('success', 'Login!' , 'Seja bem vindo: ' + USER_LOGGED.username + '!');
+            }
+        }
+    });
+}
+
+var doLogout = function(){
+    $.ajax({
+        type: 'GET',
+        url: API_URI + 'session/logout',
+        beforeSend: function(request) {
+            request.setRequestHeader("NULLWOW-SESSION", Cookies.get('NULLWOW-SESSION'));
+        },
+        error: function(ret){
+            return doToastr('warning', 'Logout Failed' , 'Erro no logout, fale com um administrador!');
+        },
+        success: function(resp){
+            if(resp.error == true){
+                return doToastr('warning', 'Logout Failed' , 'Erro no logout, fale com um administrador!');
+            }
+            Cookies.remove('NULLWOW-SESSION');
+            USER_LOGGED = null;
+            $('#loginButton').load('components/login/loggedOut.html');
+            return doToastr('success', 'Logout' , 'Você saiu com Sucesso!');
+        }
+    });
+}
 
 var doGetChar = function(){
     if(!USER_LOGGED){
@@ -36,38 +84,6 @@ var doGetChar = function(){
         }
     });
 }
-
-var verifyLoggedIn = function(cb){
-    $.ajax({
-        type: 'GET',
-        url: API_URI + 'session/',
-        error: function(ret){
-           $('#loginMessage').text(ret.error);
-        },
-        success: function(resp){
-            USER_LOGGED = resp.session;
-            if(cb){
-                cb(false, resp.session);
-            }
-        }
-    })
-};
-
-
-
-var doLogout = function() {
-    $.ajax({
-        type: 'DELETE',
-        url: API_URI + 'session/',
-        error: function(ret){
-           console.error(ret);
-        },
-        success: function(resp){
-            user = resp.session;
-            $('#loginButton').load('components/login/loggedOut.html');
-        }
-    })
-};
 
 var doRecoverPassword = function() {
     var email = $('#emailRecoverPassword').val();
