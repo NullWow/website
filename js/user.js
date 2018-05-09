@@ -80,7 +80,6 @@ var doGetChar = function(){
             doToastr('warning', 'Error', 'Você não está logado!', 5000);
         },
         success: function(resp){
-            doToastr('success', 'deu certo', 'deu certo');
             populateCharactersStore(resp.characters);
         }
     });
