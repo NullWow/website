@@ -23,10 +23,10 @@ body{
 .header{
 	margin-top: 50px;
 	height: 200px;
-	background-image: url(../img/tittle_BG.jpg);
+	background-image: url(../img/community.jpg);
+	background-position-y: -240px;
 	background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: 20%;
+	background-size: cover;
 }
 
 .logo{
