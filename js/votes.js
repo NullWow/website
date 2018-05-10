@@ -1,6 +1,6 @@
 var Provider = {
     0: 'TopG',
-    1: '',
+    1: 'Top100Arena',
     2: '' 
 };
 
@@ -53,9 +53,9 @@ var createVoteLinks = function(id){
         .after($('<a>')
             .addClass('dropdown-item')
             .addClass('white')
-            .addClass('disabled')
-            // .prop('href','http://www.top100arena.com/in.asp?id=93676?incentive=' + id)
-            // .prop('target', '_blank')
+            // .addClass('disabled')
+            .prop('href','http://www.top100arena.com/in.asp?id=93676&incentive=' + id)
+            .prop('target', '_blank')
             .text('Top100Arena')
             .append($('<img>')
                 .addClass('float-right')
