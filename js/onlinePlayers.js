@@ -33,7 +33,7 @@ var populateOnline = function(elements){
     for(var i = 0; i < elements.length; i++){
         $('#tableUsers-content')
         .append($('<tr>')
-            .append($('<th>').attr('scope', "row").append($('<p>').text(i)))
+            .append($('<th>').attr('scope', "row").append($('<p>').text(i + 1)))
             .append($('<td>').text(elements[i][0]))
             .append($('<td>').text(Races[elements[i][1]]))
             .append($('<td>').text(elements[i][2]))
