@@ -7,10 +7,12 @@
         $('#vp_counter').text(USER_LOGGED.votes + ' pts.');     
         $('#voteList').click(function(){
             $('#content').load('components/content/voteHistory.html');
-            loadVotes(USER_LOGGED.id);
+            doGetSession(loadVotes(USER_LOGGED.id));
          });
         $('#voteStore').click(function(){
-            $('#content').load('components/content/vpStore.html');
+            doGetSession(function(){
+                $('#content').load('components/content/vpStore.html');
+            });
         });
         $('#logout').click(function(){
             doLogout();
