@@ -21,7 +21,7 @@ var login = function() {
     });
 };
 
-var doGetSession = function(){
+var doGetSession = function(cb){
     $.ajax({
         type: 'GET',
         url: API_URI + 'session/',
@@ -29,9 +29,10 @@ var doGetSession = function(){
             request.setRequestHeader("NULLWOW-SESSION", Cookies.get('NULLWOW-SESSION'));
         },
         error: function(ret){
-    //        $('#loginButton').load('components/login/loggedOut.html');
-            USER_LOGGED = resp.user;                    
-            return doToastr('warning', 'Login!' , 'Sessão expirou, faça login novamente!');
+            doToastr('warning', 'Login!' , 'Sessão expirou, faça login novamente!');
+            $('#loginButton').load('components/login/loggedOut.html');
+            USER_LOGGED = null;
+            return;
         },
         success: function(resp){
             if(resp.error == true){
@@ -40,7 +41,8 @@ var doGetSession = function(){
             if(resp.session != null) {
                 USER_LOGGED = resp.user;
                 $('#loginButton').load('components/login/loggedIn.html');
-                return doToastr('success', 'Login!' , 'Seja bem vindo: ' + USER_LOGGED.username + '!');
+                doToastr('success', 'Login!' , 'Seja bem vindo: ' + USER_LOGGED.username + '!');
+                return cb();
             }
         }
     });
