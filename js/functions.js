@@ -22,9 +22,9 @@ var calculateFaction = function(players, cb){
                 ally++;
                 break;
             case '2':
-            case '3':
                 horde++;
                 break;
+            case '3':
             case '4':
                 ally++;
                 break;
@@ -39,6 +39,8 @@ var calculateFaction = function(players, cb){
                 horde++;
                 break;
             case '10':
+                horde++;
+                break;
             case '11':
                 ally++;
                 break;
