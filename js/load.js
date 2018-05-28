@@ -15,7 +15,6 @@ var loadList = function(){
     $('#infoLink').removeClass('active');
     $('#onlineListLink').addClass('active');
     $('#content').load('components/content/onlineList.html');
-    getListPlayersOnline();
 };
 
 
