@@ -47,8 +47,11 @@ var getListPlayersOnline = function(cb){
     $.ajax({
 		type: "get",
         url: API_URI + 'listas/who',
+        error: function(msg) {
+            cb(null);
+        },
 		success: function (msg) {
-            populateOnline(msg.players);
+            cb(msg.players);
 		}
 	});
 };
