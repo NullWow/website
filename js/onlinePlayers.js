@@ -1,26 +1,39 @@
 var Races = {
-    1: 'Human',
-    2: 'Orc',
-    3: 'Dwarf',
-    4: 'Night Elf',
-    5: 'Undead',
-    6: 'Tauren',
-    7: 'Gnome',
-    8: 'Troll',
+    1:  'Human',
+    2:  'Orc',
+    3:  'Dwarf',
+    4:  'Night Elf',
+    5:  'Undead',
+    6:  'Tauren',
+    7:  'Gnome',
+    8:  'Troll',
     10: 'Blood Elf',
     11: 'Drainei'
 };
 
+var colors = {
+    'Warrior'       : '#C79C6E', 
+    'Paladin'       : '#F58CBA', 
+    'Hunter'        : '#ABD473', 
+    'Rogue'         : '#FFF569', 
+    'Priest'        : '#FFFFFF', 
+    'Deathknight'   : '#C41F3B', 
+    'Shaman'        : '#0070DE', 
+    'Mage'          : '#60CCF0', 
+    'Warlock'       : '#9482C9', 
+    'Druid'         : '#FF7D0A'
+};
+
 var Class = {
-    1: 'Warrior',
-    2: 'Paladin',
-    3: 'Hunter',
-    4: 'Rogue',
-    5: 'Priest',
-    6: 'Deathknight',
-    7: 'Shaman',
-    8: 'Mage',
-    9: 'Warlock',
+    1:  'Warrior',
+    2:  'Paladin',
+    3:  'Hunter',
+    4:  'Rogue',
+    5:  'Priest',
+    6:  'Deathknight',
+    7:  'Shaman',
+    8:  'Mage',
+    9:  'Warlock',
     11: 'Druid'
 };
 
