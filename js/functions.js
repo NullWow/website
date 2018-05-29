@@ -83,8 +83,8 @@ var generateFactionGraph = function (chartId, factions) {
 var calculateClasses = function (players, cb) {
     if(!players) { return cb(false); }
 
-    var classes = [];
     var classesValue = {};
+
     classesValue['Warrior']      = 0;
     classesValue['Rogue']        = 0;
     classesValue['Paladin']      = 0;
@@ -98,34 +98,21 @@ var calculateClasses = function (players, cb) {
     
     players.forEach(element => {
         classesValue[Class[element[3]]]++;
-        if(! classes.includes(Class[element[3]])) {
-            classes.push(Class[element[3]]);
-        }
     });
-    return cb('classesChart', classesValue, classes);
+    return cb('classesChart', classesValue);
 }
 
-var generateClassesGraph = function(chartId, classes, labels) {
+var generateClassesGraph = function(chartId, classes) {
     var ctxD = document.getElementById(chartId).getContext('2d');
     var bgColors = [];
     var data = [];
-    var colors = {
-        'Warrior': '#C79C6E', 
-        'Paladin': '#F58CBA', 
-        'Hunter': '#ABD473', 
-        'Rogue': '#FFF569', 
-        'Priest': '#FFFFFF', 
-        'Deathknight': '#C41F3B', 
-        'Shaman': '#0070DE', 
-        'Mage': '#6OCCF0', 
-        'Warlock': '#9482C9', 
-        'Druid': '#FF7D0A'
-    };
-
-
+    var labels = [];
+    
     for (var key in classes) {
-        if(classes[key] > 0)
+        if(classes[key] > 0){
             data.push(classes[key]);
+            labels.push(key);
+        }
     }
 
     labels.forEach(element => {
@@ -140,7 +127,6 @@ var generateClassesGraph = function(chartId, classes, labels) {
                 {
                     data: data,
                     backgroundColor: bgColors,
-                    hoverBackgroundColor: bgColors,
                     borderWidth: 0.3
                 }
             ]
