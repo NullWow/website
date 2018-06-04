@@ -28,7 +28,7 @@
 
 <script>
     $(document).ready(function(){
-		getListPlayersOnline(function(players){
+		getRankList(function(players){
 			if(players.length > 0){
 				calculateFaction(players, generateFactionGraph);
 				calculateClasses(players, generateClassesGraph);

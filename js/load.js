@@ -33,8 +33,7 @@ var loadRankList = function(){
     $('#onlineListLink').removeClass('active');
     $('#infoLink').removeClass('active');
     $('#rankList').addClass('active');
-    $('#content').load('components/content/onlineList.html');
-    getRankList();
+    $('#content').load('components/content/rankList.html');
 };
 
 var loadRegister = function(){

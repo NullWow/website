@@ -70,6 +70,7 @@ var generateFactionGraph = function (chartId, factions) {
         options: {
             responsive: true,
             legend: {
+                display: false,
                 labels: {
                     fontColor: 'white'
                 }
@@ -134,6 +135,7 @@ var generateClassesGraph = function(chartId, classes) {
         options: {
             responsive: true,
             legend: {
+                display: false,
                 labels: {
                     fontColor: 'white'
                 }

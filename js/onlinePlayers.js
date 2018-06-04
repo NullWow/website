@@ -82,12 +82,12 @@ var getNumPlayersOnline = function(cb){
 	});
 };
 
-var getRankList = function(){
+var getRankList = function(cb){
     $.ajax({
 		type: "get",
         url: API_URI + 'listas/rank',
 		success: function (msg) {
-            populateOnline(msg.players);
+            return cb(msg.players);
 		}
 	});
 };
